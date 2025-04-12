@@ -20,5 +20,20 @@ The repository contains:
 - `output-main.pdf` (compiled `main.typ` with Typst from `main` branch)
 - `output-fix.pdf` (compiled `main.typ` with Typst with the fix applied)
 
+---
+
 ¹ Original `polish-legal.csl` checked for `ibid` and `ibid-with-locator` in the wrong order (`ibid-with-locator` matcher first, which catches both `ibid` and `ibid-with=locator`).
-Changed the order, so `ibid` is checked first (`ibid` matcher catches `ibid` but not `ibid-with-locator`).
+Changed the order, so `ibid` is checked first (`ibid` matcher catches `ibid` but not `ibid-with-locator`). **OR** the CSL interpretation in Hayagriva is wrong.
+
+Compare:
+
+```rust
+TestPosition::Ibid => props.speculative.ibid == IbidState::Ibid,
+TestPosition::IbidWithLocator => {
+    props.speculative.ibid.is_ibid_with_locator()  // matches!(self, Self::IbidWithLocator | Self::Ibid)
+}
+```
+
+and:
+
+> Whenever position=”ibid-with-locator” tests true, position=”ibid” also tests true. And whenever position=”ibid” or position=”near-note” test true, position=”subsequent” also tests true.
