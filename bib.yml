@@ -1,0 +1,13 @@
+booka:
+    type: Book
+    title: "Book A"
+    author: "Surname, Name"
+    location: Warsaw
+    date: 1971
+
+bookb:
+    type: Book
+    title: "Book B"
+    author: "Surname, Name"
+    location: Warsaw
+    date: 1995
