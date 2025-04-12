@@ -22,6 +22,7 @@ The repository contains:
 
 ---
 
+### Side topic (bug in Hayagriva or CSL file)
 ¹ Original `polish-legal.csl` checked for `ibid` and `ibid-with-locator` in the wrong order (`ibid-with-locator` matcher first, which catches both `ibid` and `ibid-with=locator`).
 Changed the order, so `ibid` is checked first (`ibid` matcher catches `ibid` but not `ibid-with-locator`). **OR** the CSL interpretation in Hayagriva is wrong.
 
